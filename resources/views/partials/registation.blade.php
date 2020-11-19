@@ -1,9 +1,10 @@
-@extends('partials.layouts')
+@extends('partials')
 @section('content')
+
 <form action="/action_page.php">
-    <div class="form-group">
-    <label for="name">User Name</label>
-    <input type="text" class="form-control" name="name" placeholder="name">
+	<div class="form-group">
+  	<label for="name">User Name</label>
+  	<input type="text" class="form-control" name="name" placeholder="name">
   </div>
   <div class="form-group">
     <label for="email">Email address:</label>
@@ -17,4 +18,5 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 @endsection

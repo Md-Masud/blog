@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+    //return view('welcome');
+//});
+Route::get('/', [FrontendController::class, 'index']);
+Route::get('/index', [FrontendController::class, 'index'])->name('index');
+Route::namespace('Frontend')->group(function(){
 });
+
+// registation Route
+Route::get('/register',[AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register',[AuthController::class, 'processRegister']);
+//login route
+Route::get('/login',[AuthController::class,'showLoginForm'])->name('login');
+Route::post('/login',[AuthController::class,'processLogin']);
+
