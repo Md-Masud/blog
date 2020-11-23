@@ -3,7 +3,7 @@
  <div class="container">
   <h2>Registation</h2>
   <div class="card">
-<form action="{{route('register')}}"method="post" enctype="multipart/form-data">
+<form action="{{route('adminregister')}}"method="post" enctype="multipart/form-data">
   @csrf
   @if($errors->all())
    <div class="alert alert-danger">

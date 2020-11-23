@@ -2,7 +2,7 @@
   <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>blog</title>
+  <title>admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,18 +26,15 @@
     <ul class="navbar-nav ml-auto">
       @auth()
       <li class="nav-item">
-        <a class="nav-link" href="{{route('index')}}">Home</a>
+        <a class="nav-link" href="">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route('logout')}}">logout</a>
+        <a class="nav-link" href="">logout</a>
       </li>
       @endauth
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="{{route('login')}}">sign in</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('register')}}">sign up</a>
+        <a class="nav-link" href="">sign in</a>
       </li>
       @endguest
          

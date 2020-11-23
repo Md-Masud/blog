@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Backend\AdminAuthController;
 use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,15 @@ Route::post('/register',[AuthController::class, 'processRegister']);
 //login route
 Route::get('/login',[AuthController::class,'showLoginForm'])->name('login');
 Route::post('/login',[AuthController::class,'processLogin']);
+//logout
+Route::get('/logout',[AuthController::class,'processLogout'])->name('logout');
+// admin route 
+Route::namespace('Backend')->prefix('admin')->group(function(){
+	Route::get('/', [AdminAuthController::class, 'index']);
+	Route::get('/adminindex', [AdminAuthController::class, 'index'])->name('adminindex');
+	Route::get('adminlogin',[AdminAuthController::class,'showLoginForm'])->name('adminlogin');
+   Route::post('adminlogin',[AdminAuthController::class,'AprocessLogin']);
+   Route::get('adminregister',[AdminAuthController::class,'showRegisterForm'])->name('adminregister');
+   Route::post('adminregister',[AdminAuthController::class,'processRegister']);
 
+});
